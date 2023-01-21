@@ -2,31 +2,35 @@ import java.util.Scanner;
 
 public class program {
     public static void main(String[] args) {
-        task3();
+ task4();
 
     }
 
     static void task1() {
         System.out.println("Введите число: ");
-        Scanner scanner = new Scanner(System.in);5
+        Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
+        scanner.close();
         int sum = 0;
         for (int i = 1; i <= n; i++) {
             sum = sum + i;
 
         }
         System.out.println(sum);
+
     }
 
     static void task2() {
         System.out.println("Введите число: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int mult = 1; // multiplication
+        scanner.close();
+        int multi = 1; // multiplication
         for (int i = 1; i <= n; i++) {
-            mult = mult * i;
+            multi = multi * i;
         }
-        System.out.println(mult);
+        System.out.println(multi);
+
     }
 
     static void task3() {
@@ -41,11 +45,46 @@ public class program {
             }
             if (check) {
                 System.out.println(i);
-            }
-            else{
+            } else {
                 check = true;
             }
         }
-        
+
     }
+
+    static void task4() {
+      
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите первое число: ");
+        int x = scanner.nextInt();
+        System.out.println("Введите знак операции['+', '-', '*', '/', '%']: ");
+        char sign = scanner.next().charAt(0);
+        String signString = String.valueOf(sign);
+        System.out.println("Введите второе число: ");
+        int y = scanner.nextInt();
+        scanner.close();
+            switch (signString) {
+                case "+":
+                    System.out.printf("Ответ: %d", x+y);
+                    break;
+                case "-":
+                    System.out.printf("Ответ: %d", x - y);
+                    break;
+                case "/":
+                    System.out.printf("Ответ: %d", x / y);
+                    break;
+                case "*":
+                    System.out.printf("Ответ: %d", x * y);
+                    break;
+                case "%":
+                    System.out.printf("Ответ: %d", x % y);
+                    break;
+                default:
+                    System.out.println("Данный знак операции отсутствует");
+            
+        }
+       
+      
+    }
+
 }
