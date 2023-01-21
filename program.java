@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class program {
     public static void main(String[] args) {
- task4();
-
+ task5();
     }
 
     static void task1() {
@@ -17,7 +16,6 @@ public class program {
 
         }
         System.out.println(sum);
-
     }
 
     static void task2() {
@@ -30,7 +28,6 @@ public class program {
             multi = multi * i;
         }
         System.out.println(multi);
-
     }
 
     static void task3() {
@@ -49,7 +46,6 @@ public class program {
                 check = true;
             }
         }
-
     }
 
     static void task4() {
@@ -81,10 +77,18 @@ public class program {
                     break;
                 default:
                     System.out.println("Данный знак операции отсутствует");
+        }
+    }
+    static void task5(){
+        Scanner scanner = new Scanner(System.in);
+        String prim = scanner.nextLine(); //5?+7?=127
+        if (prim.indexOf("?")!=-1) {
+            System.out.println("там есть вопрос");
             
         }
-       
-      
+        else{
+            System.out.println("вопроса нет");
+        }
+        
     }
-
 }
