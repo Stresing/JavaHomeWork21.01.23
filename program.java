@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class program {
     public static void main(String[] args) {
-        task2();
+        task3();
 
     }
 
@@ -27,5 +27,25 @@ public class program {
             mult = mult * i;
         }
         System.out.println(mult);
+    }
+
+    static void task3() {
+        int n = 1000;
+        boolean check = true;
+        for (int i = 2; i < n; i++) {
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                System.out.println(i);
+            }
+            else{
+                check = true;
+            }
+        }
+        
     }
 }
