@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class program {
     public static void main(String[] args) {
- task5();
+        task4();
     }
 
     static void task1() {
@@ -49,7 +49,7 @@ public class program {
     }
 
     static void task4() {
-      
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое число: ");
         int x = scanner.nextInt();
@@ -59,36 +59,53 @@ public class program {
         System.out.println("Введите второе число: ");
         int y = scanner.nextInt();
         scanner.close();
-            switch (signString) {
-                case "+":
-                    System.out.printf("Ответ: %d", x+y);
-                    break;
-                case "-":
-                    System.out.printf("Ответ: %d", x - y);
-                    break;
-                case "/":
-                    System.out.printf("Ответ: %d", x / y);
-                    break;
-                case "*":
-                    System.out.printf("Ответ: %d", x * y);
-                    break;
-                case "%":
-                    System.out.printf("Ответ: %d", x % y);
-                    break;
-                default:
-                    System.out.println("Данный знак операции отсутствует");
+        switch (signString) {
+            case "+":
+                System.out.printf("Ответ: %d", x + y);
+                break;
+            case "-":
+                System.out.printf("Ответ: %d", x - y);
+                break;
+            case "/":
+            Double res = (double)x/(double)y;
+                System.out.printf("Ответ: %f", res);
+                break;
+            case "*":
+                System.out.printf("Ответ: %d", x * y);
+                break;
+            case "%":
+                System.out.printf("Ответ: %d", x % y);
+                break;
+            default:
+                System.out.println("Данный знак операции отсутствует");
         }
     }
-    static void task5(){
+
+    static void task5() {
         Scanner scanner = new Scanner(System.in);
-        String prim = scanner.nextLine(); //5?+7?=127
-        if (prim.indexOf("?")!=-1) {
-            System.out.println("там есть вопрос");
+        String prim = scanner.nextLine(); // 5?+7?=127
+        String[] arrNum = equationSplit(prim);
+        for (int i = 0; i < arrNum.length; i++) {
+            System.out.println(arrNum[i]);
             
         }
-        else{
-            System.out.println("вопроса нет");
-        }
+
+    }
+
+    static String[] equationSplit(String str){
+        String someStroke = str;
+        String someArr[] = someStroke.split("[+=]");
+        
+        return someArr;
         
     }
 }
+/*
+ * Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть
+ * заменены знаком вопроса, например 2? + ?5 = 69.
+ * Требуется восстановить выражение до верного равенства.
+ * Предложить хотя бы одно решение или сообщить, что его нет.
+ * 
+ * 
+ * разделение на строки 5?, 7?, 127
+ */
