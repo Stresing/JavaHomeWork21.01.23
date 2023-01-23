@@ -81,25 +81,25 @@ public class program {
         }
     }
 
-    static void task5() {
-        Scanner scanner = new Scanner(System.in);
-        String prim = scanner.nextLine(); // 5?+7?=127
-        String[] arrNum = equationSplit(prim);
-        for (int i = 0; i < arrNum.length; i++) {
-            System.out.println(arrNum[i]);
-            
-        }
+//     static void task5() {  //не закончил
+//         Scanner scanner = new Scanner(System.in); 
+//         String prim = scanner.nextLine(); // 5?+7?=127
+//         String[] arrNum = equationSplit(prim);
+//         for (int i = 0; i < arrNum.length; i++) {
+//             System.out.println(arrNum[i]);
+             
+//         }
 
-    }
+//     }
 
-    static String[] equationSplit(String str){
-        String someStroke = str;
-        String someArr[] = someStroke.split("[+=]");
+//     static String[] equationSplit(String str){
+//         String someStroke = str;
+//         String someArr[] = someStroke.split("[+=]");
         
-        return someArr;
+//         return someArr;
         
-    }
-}
+//     }
+// }
 /*
  * Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть
  * заменены знаком вопроса, например 2? + ?5 = 69.
